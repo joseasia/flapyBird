@@ -20,6 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreLabelNode:SKLabelNode!
     var bestScoreLabelNode:SKLabelNode!
     let userDefaults:UserDefaults = UserDefaults.standard
+    let sound = SKAction.playSoundFileNamed("decision23.mp3", waitForCompletion: false)
     
     // SKView上にシーンが表示されたときに呼ばれるメソッド
     override func didMove(to view: SKView) {
@@ -359,7 +360,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     itemScore += 1
                     itemScoreLabelNode.text = "ItemScore:\(itemScore)"
             
-            let sound = SKAction.playSoundFileNamed("decision23.mp3", waitForCompletion: false)
             self.run(sound)
 
         }
